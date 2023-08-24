@@ -1,47 +1,83 @@
 {
-  "solu": {
-    "prefix": "solu",
-    "body": [
-      "class Solution",
-      "{",
-      "public:",
-      "\t$1 $2($3) {",
-      "\t\t$4",
-      "\t}",
-      "};"
-    ],
-    "description": "leetcode class Solution template"
-  },
-  "lc": {
-    "prefix": "lc",
-    "body": [
-      "#include <bits/stdc++.h>",
-      "",
-      "using namespace std;",
-      "",
-      "class Solution",
-      "{",
-      "public:",
-      "\t$1 $2($3) {",
-      "\t\t$4",
-      "\t}",
-      "};",
-      "",
-      "int main(int argc, char *argv[]) {",
-      "\tSolution s;",
-      "\treturn 0;",
-      "}"
-    ],
-    "description": "leetcode template"
-  },
-  "hdef": {
-    "prefix": "hdef",
-    "body": [
-        "#ifndef $1",
-        "#define $1",
-        "",
-        "#endif // $1"
-    ],
-    "description": "header file definitions"
-  }
+    "codeforces template": {
+        "prefix": "cf_main",
+        "body": [
+            "#include <bits/stdc++.h>",
+            "",
+            "using namespace std;",
+            "",
+            "#define ll long long",
+            "#define ld long double",
+            "#define all(a) (a).begin(), (a).end()",
+            "#define debug(x)       { cerr << #x << \" = \" << x << endl; }",
+            "",
+            "const int MAX_N = 1e5 + 5;",
+            "const ll MOD = 1e9 + 7;",
+            "const ll INF = 1e9;",
+            "const ld EPS = 1e-9;",
+            "",
+            "",
+            "void solve() {",
+            "\t",
+            "}",
+            "",
+            "int main() {",
+            "    ios_base::sync_with_stdio(0);",
+            "    cin.tie(0); cout.tie(0);",
+            "    int tc = 1;",
+            "    // cin >> tc;",
+            "    for (int t = 1; t <= tc; t++) {",
+            "        solve();",
+            "    }",
+            "}"
+        ],
+        "description": "codeforces template"
+    },
+    {
+        "prefix": "solu",
+        "body": [
+            "#include <bits/stdc++.h>",
+            "using namespace std;",
+            "",
+            "#define MAX_SIZE 10005",
+            "typedef ll long long",
+            "",
+            "int main(int argc, char *argv[]) {",
+            "\treturn 0;",
+            "}"
+        ],
+        "description": "codeforces template"
+    },
+    "lc": {
+        "prefix": "lc",
+        "body": [
+            "#include <bits/stdc++.h>",
+            "",
+            "using namespace std;",
+            "",
+            "class Solution",
+            "{",
+            "public:",
+            "\t$1 $2($3) {",
+            "\t\t$4",
+            "\t}",
+            "};",
+            "",
+            "int main(int argc, char *argv[]) {",
+            "\tSolution s;",
+            "\treturn 0;",
+            "}"
+        ],
+        "description": "leetcode template"
+    },
+    "hdef": {
+        "prefix": "hdef",
+        "body": [
+            "#ifndef $1",
+            "#define $1",
+            "",
+            "#endif // $1"
+        ],
+        "description": "header file definitions"
+    }
 }
