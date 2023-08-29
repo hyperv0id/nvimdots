@@ -1,55 +1,28 @@
 {
-    "codeforces template": {
-        "prefix": "cf_main",
+    "fori": {
+        "prefix": "fori",
         "body": [
-            "#include <bits/stdc++.h>",
-            "",
-            "using namespace std;",
-            "",
-            "#define ll long long",
-            "#define ld long double",
-            "#define all(a) (a).begin(), (a).end()",
-            "#define debug(x)       { cerr << #x << \" = \" << x << endl; }",
-            "",
-            "const int MAX_N = 1e5 + 5;",
-            "const ll MOD = 1e9 + 7;",
-            "const ll INF = 1e9;",
-            "const ld EPS = 1e-9;",
-            "",
-            "",
-            "void solve() {",
-            "\t",
-            "}",
-            "",
-            "int main() {",
-            "    ios_base::sync_with_stdio(0);",
-            "    cin.tie(0); cout.tie(0);",
-            "    int tc = 1;",
-            "    // cin >> tc;",
-            "    for (int t = 1; t <= tc; t++) {",
-            "        solve();",
-            "    }",
+            "for (${1:int} ${2:i} = ${3:0}; $2 < ${4:length}; ++$2) {",
+            "\t$0",
             "}"
         ],
-        "description": "codeforces template"
+        "description": "Code snippet for 'fori' loop"
     },
-    {
-        "prefix": "solu",
+    "solu": {
+        "prefix": "lcsolu",
         "body": [
-            "#include <bits/stdc++.h>",
-            "using namespace std;",
-            "",
-            "#define MAX_SIZE 10005",
-            "typedef ll long long",
-            "",
-            "int main(int argc, char *argv[]) {",
-            "\treturn 0;",
-            "}"
+            "class Solution",
+            "{",
+            "public:",
+            "\t$1 $2($3) {",
+            "\t\t$4",
+            "\t}",
+            "};"
         ],
-        "description": "codeforces template"
+        "description": "leetcode class Solution template"
     },
     "lc": {
-        "prefix": "lc",
+        "prefix": "leetcode",
         "body": [
             "#include <bits/stdc++.h>",
             "",
@@ -69,6 +42,36 @@
             "}"
         ],
         "description": "leetcode template"
+    },
+    "codeforces": {
+        "prefix": "codeforces",
+        "body": [
+            "#include <bits/stdc++.h>",
+            "#include <algorithm>",
+            "",
+            "using namespace std;",
+            "#define endl '\\n'",
+            "#define MAX_SIZE 100005",
+            "#define MOD 1000000007",
+            "#define PI 3.1415926535897932384626433832795",
+            "string to_upper(string a) { for (int i=0;i<(int)a.size();++i) if (a[i]>='a' && a[i]<='z') a[i]-='a'-'A'; return a; }",
+            "string to_lower(string a) { for (int i=0;i<(int)a.size();++i) if (a[i]>='A' && a[i]<='Z') a[i]+='a'-'A'; return a; }",
+            "void yes() { cout<<\"YES\\n\"; }",
+            "void no() { cout<<\"NO\\n\"; }",
+            "// types",
+            "typedef long long ll;",
+            "typedef unsigned long long ull;",
+            "",
+            "int main(int argc, char *argv[]) {",
+            "\tint tc=1;",
+            "\t//cin>>tc;",
+            "\twhile(tc--){",
+            "\t\t$1",
+            "\t}",
+            "\treturn 0;",
+            "}"
+        ],
+        "description": "codeforces template"
     },
     "hdef": {
         "prefix": "hdef",

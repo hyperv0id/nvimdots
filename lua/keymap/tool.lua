@@ -87,7 +87,8 @@ local plug_map = {
 	["n|<leader>tl"] = map_cr("TroubleToggle loclist"):with_noremap():with_silent():with_desc("lsp: Show loclist"),
 
 	-- Plugin: telescope
-	["n|<C-p>"] = map_callback(function()
+	-- vscode like <Ctrl+P> 执行命令
+	["n|<C-S-P>"] = map_callback(function()
 			_command_panel()
 		end)
 		:with_noremap()
@@ -119,6 +120,8 @@ local plug_map = {
 		:with_desc("find: Word in project"),
 	["n|<leader>fe"] = map_cu("Telescope oldfiles"):with_noremap():with_silent():with_desc("find: File by history"),
 	["n|<leader>ff"] = map_cu("Telescope find_files"):with_noremap():with_silent():with_desc("find: File in project"),
+	-- vscode like <Ctrl+p> 查找文件
+	["n|<C-p>"] = map_cu("Telescope find_files"):with_noremap():with_silent():with_desc("find: File in project"),
 	["n|<leader>fc"] = map_cu("Telescope colorscheme")
 		:with_noremap()
 		:with_silent()
