@@ -12,6 +12,8 @@ return vim.schedule_wrap(function()
 			"css",
 			"go",
 			"gomod",
+			"gowork",
+			"gosum",
 			"html",
 			"javascript",
 			"json",

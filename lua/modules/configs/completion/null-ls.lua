@@ -25,6 +25,12 @@ return function()
 			},
 		}),
 		btns.formatting.rustfmt,
+		btns.formatting.golines.with({
+			extra_args = {
+				"--max-len=180",
+				"--base-formatter=gofumpt",
+			},
+		}),
 	}
 	require("modules.utils").load_plugin("null-ls", {
 		border = "rounded",

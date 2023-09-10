@@ -39,12 +39,12 @@ local core_map = {
 	["i|<C-s>"] = map_cmd("<Esc>:w<CR>"):with_desc("edit: Save file"),
 	["i|<C-q>"] = map_cmd("<Esc>:wq<CR>"):with_desc("edit: Save file and quit"),
 	-- Command mode
-	["c|<C-b>"] = map_cmd("<Left>"):with_noremap():with_desc("edit: Left"),
-	["c|<C-f>"] = map_cmd("<Right>"):with_noremap():with_desc("edit: Right"),
-	["c|<C-a>"] = map_cmd("<Home>"):with_noremap():with_desc("edit: Home"),
-	["c|<C-e>"] = map_cmd("<End>"):with_noremap():with_desc("edit: End"),
-	["c|<C-d>"] = map_cmd("<Del>"):with_noremap():with_desc("edit: Delete"),
-	["c|<C-h>"] = map_cmd("<BS>"):with_noremap():with_desc("edit: Backspace"),
+	["c|<C-h>"] = map_cmd("<Left>"):with_noremap():with_desc("edit: Left"),
+	["c|<C-l>"] = map_cmd("<Right>"):with_noremap():with_desc("edit: Right"),
+	["c|<C-j>"] = map_cmd("<Home>"):with_noremap():with_desc("edit: Home"),
+	["c|<C-k>"] = map_cmd("<End>"):with_noremap():with_desc("edit: End"),
+	-- ["c|<C-d>"] = map_cmd("<Del>"):with_noremap():with_desc("edit: Delete"),
+	-- ["c|<C-h>"] = map_cmd("<BS>"):with_noremap():with_desc("edit: Backspace"),
 	["c|<C-t>"] = map_cmd([[<C-R>=expand("%:p:h") . "/" <CR>]])
 		:with_noremap()
 		:with_desc("edit: Complete path of current file"),
