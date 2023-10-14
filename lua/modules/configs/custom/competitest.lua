@@ -14,6 +14,7 @@ return function()
 			cpp = { exec = "./.$(FNOEXT).out" },
 			rust = { exec = "./.$(FNOEXT).out" },
 			python = { exec = "python", args = { "$(FNAME)" } },
+			go = { exec = "go", args = { "run $(FNAME)" } },
 			java = { exec = "java", args = { ".$(FNOEXT).out" } },
 		},
 
