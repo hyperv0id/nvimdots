@@ -5,30 +5,7 @@ return vim.schedule_wrap(function()
 	vim.api.nvim_set_option_value("foldexpr", "nvim_treesitter#foldexpr()", {})
 
 	require("modules.utils").load_plugin("nvim-treesitter", {
-		ensure_installed = {
-			"bash",
-			"c",
-			"cpp",
-			"css",
-			"go",
-			"gomod",
-			"gowork",
-			"gosum",
-			"html",
-			"javascript",
-			"json",
-			"latex",
-			"lua",
-			"make",
-			"markdown",
-			"markdown_inline",
-			"python",
-			"rust",
-			"typescript",
-			"vimdoc",
-			"vue",
-			"yaml",
-		},
+		ensure_installed = require("core.settings").treesitter_deps,
 		highlight = {
 			enable = true,
 			disable = function(ft, bufnr)
@@ -39,7 +16,7 @@ return vim.schedule_wrap(function()
 				local ok, is_large_file = pcall(vim.api.nvim_buf_get_var, bufnr, "bigfile_disable_treesitter")
 				return ok and is_large_file
 			end,
-			additional_vim_regex_highlighting = { "c", "cpp" },
+			additional_vim_regex_highlighting = false,
 		},
 		textobjects = {
 			select = {
@@ -72,7 +49,7 @@ return vim.schedule_wrap(function()
 				},
 			},
 		},
-		context_commentstring = { enable = true, enable_autocmd = false },
+		indent = { enable = true },
 		matchup = { enable = true },
 	}, false, require("nvim-treesitter.configs").setup)
 	require("nvim-treesitter.install").prefer_git = true

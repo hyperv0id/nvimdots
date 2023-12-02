@@ -47,7 +47,7 @@ return function()
 					information = { "underline" },
 				},
 			},
-			aerial = false,
+			aerial = true,
 			alpha = false,
 			barbar = false,
 			beacon = false,
@@ -58,7 +58,7 @@ return function()
 			dropbar = { enabled = true, color_mode = true },
 			fern = false,
 			fidget = true,
-			flash = false,
+			flash = true,
 			gitgutter = false,
 			gitsigns = true,
 			harpoon = false,
@@ -85,7 +85,7 @@ return function()
 			rainbow_delimiters = true,
 			sandwich = false,
 			semantic_tokens = true,
-			symbols_outline = true,
+			symbols_outline = false,
 			telekasten = false,
 			telescope = { enabled = true, style = "nvchad" },
 			treesitter_context = true,
@@ -118,8 +118,8 @@ return function()
 					MasonNormal = { link = "NormalFloat" },
 
 					-- For indent-blankline
-					IndentBlanklineChar = { fg = cp.surface0 },
-					IndentBlanklineContextChar = { fg = cp.surface2, style = { "bold" } },
+					IblIndent = { fg = cp.surface0 },
+					IblScope = { fg = cp.surface2, style = { "bold" } },
 
 					-- For nvim-cmp and wilder.nvim
 					Pmenu = { fg = cp.overlay2, bg = transparent_background and cp.none or cp.base },
