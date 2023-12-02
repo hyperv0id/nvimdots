@@ -1,5 +1,4 @@
 return function()
-	local alpha = require("alpha")
 	local dashboard = require("alpha.themes.dashboard")
 	require("modules.utils").gen_alpha_hl()
 
@@ -61,7 +60,7 @@ return function()
 
 	local leader = " "
 	dashboard.section.buttons.val = {
-		button("space f c", " Scheme change", leader, nil, {
+		button("space f c", " Scheme change", leader, nil, {
 			noremap = true,
 			silent = true,
 			nowait = true,
@@ -154,7 +153,7 @@ return function()
 		dashboard.section.footer,
 	}
 
-	alpha.setup(dashboard.opts)
+	require("modules.utils").load_plugin("alpha", dashboard.opts)
 
 	vim.api.nvim_create_autocmd("User", {
 		pattern = "LazyVimStarted",
