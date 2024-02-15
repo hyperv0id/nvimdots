@@ -23,24 +23,24 @@ local plug_map = {
 	-- Plugin: toggleterm
 	["t|<Esc><Esc>"] = map_cmd([[<C-\><C-n>]]):with_noremap():with_silent(), -- switch to normal mode in terminal.
 	["t|jk"] = map_cmd([[<C-\><C-n>]]):with_noremap():with_silent(), -- switch to normal mode in terminal.
-	["n|<C-\\>"] = map_cr("ToggleTerm direction=horizontal")
+	["n|<C-`>"] = map_cr("ToggleTerm direction=horizontal")
 		:with_noremap()
 		:with_silent()
 		:with_desc("terminal: Toggle horizontal"),
-	["i|<C-\\>"] = map_cmd("<Esc><Cmd>ToggleTerm direction=horizontal<CR>")
+	["i|<C-`>"] = map_cmd("<Esc><Cmd>ToggleTerm direction=horizontal<CR>")
 		:with_noremap()
 		:with_silent()
 		:with_desc("terminal: Toggle horizontal"),
-	["t|<C-\\>"] = map_cmd("<Cmd>ToggleTerm<CR>"):with_noremap():with_silent():with_desc("terminal: Toggle horizontal"),
-	["n|<A-\\>"] = map_cr("ToggleTerm direction=vertical")
+	["t|<C-`>"] = map_cmd("<Cmd>ToggleTerm<CR>"):with_noremap():with_silent():with_desc("terminal: Toggle horizontal"),
+	["n|<C-S-`>"] = map_cr("ToggleTerm direction=vertical")
 		:with_noremap()
 		:with_silent()
 		:with_desc("terminal: Toggle vertical"),
-	["i|<A-\\>"] = map_cmd("<Esc><Cmd>ToggleTerm direction=vertical<CR>")
+	["i|<C-S-`>"] = map_cmd("<Esc><Cmd>ToggleTerm direction=vertical<CR>")
 		:with_noremap()
 		:with_silent()
 		:with_desc("terminal: Toggle vertical"),
-	["t|<A-\\>"] = map_cmd("<Cmd>ToggleTerm<CR>"):with_noremap():with_silent():with_desc("terminal: Toggle vertical"),
+	["t|<A-`>"] = map_cmd("<Cmd>ToggleTerm<CR>"):with_noremap():with_silent():with_desc("terminal: Toggle vertical"),
 	["n|<F5>"] = map_cr("ToggleTerm direction=vertical")
 		:with_noremap()
 		:with_silent()
@@ -56,6 +56,7 @@ local plug_map = {
 		:with_silent()
 		:with_desc("terminal: Toggle float"),
 	["t|<A-d>"] = map_cmd("<Cmd>ToggleTerm<CR>"):with_noremap():with_silent():with_desc("terminal: Toggle float"),
+	-- Plugin: lazygit
 	["n|<leader>lg"] = map_callback(function()
 			_toggle_lazygit()
 		end)
@@ -84,13 +85,24 @@ local plug_map = {
 	["n|<leader>tl"] = map_cr("TroubleToggle loclist"):with_noremap():with_silent():with_desc("lsp: Show loclist"),
 
 	-- Plugin: telescope
-	-- vscode like <Ctrl+P> 执行命令
+	["n|<leader>fc"] = map_cmd("<Cmd>Telescope commands<CR>")
+		:with_noremap()
+		:with_silent()
+		:with_desc("Telescope: find commands"),
+	-- ["t|<A-`>"] = map_cmd("<Cmd>ToggleTerm<CR>"):with_noremap():with_silent():with_desc("terminal: Toggle vertical"),
+	-- vscode like <Ctrl+Shift+P> 执行命令
 	["n|<C-S-P>"] = map_callback(function()
 			_command_panel()
 		end)
 		:with_noremap()
 		:with_silent()
 		:with_desc("tool: Toggle command panel"),
+	-- ["n|<leader>fc"] = map_callback(function()
+	-- 		_command_panel()
+	-- 	end)
+	-- 	:with_noremap()
+	-- 	:with_silent()
+	-- 	:with_desc("tool: Toggle command panel"),
 	["n|<leader>u"] = map_callback(function()
 			require("telescope").extensions.undo.undo()
 		end)
@@ -115,11 +127,18 @@ local plug_map = {
 		:with_noremap()
 		:with_silent()
 		:with_desc("find: Word in project"),
+	-- vscode like <Ctrl+Shift+F> 查找字符串
+	["n|<C-S-F>"] = map_callback(function()
+			require("telescope").extensions.live_grep_args.live_grep_args()
+		end)
+		:with_noremap()
+		:with_silent()
+		:with_desc("find: Word in project"),
 	["n|<leader>fe"] = map_cu("Telescope oldfiles"):with_noremap():with_silent():with_desc("find: File by history"),
 	["n|<leader>ff"] = map_cu("Telescope find_files"):with_noremap():with_silent():with_desc("find: File in project"),
 	-- vscode like <Ctrl+p> 查找文件
 	["n|<C-p>"] = map_cu("Telescope find_files"):with_noremap():with_silent():with_desc("find: File in project"),
-	["n|<leader>fc"] = map_cu("Telescope colorscheme")
+	["n|<leader>ft"] = map_cu("Telescope colorscheme")
 		:with_noremap()
 		:with_silent()
 		:with_desc("ui: Change colorscheme for current session"),
