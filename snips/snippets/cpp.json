@@ -47,15 +47,12 @@
         "prefix": "codeforces",
         "body": [
             "#include <bits/stdc++.h>",
-            "#include <algorithm>",
             "",
             "using namespace std;",
+            "#define _rep(i, a, b) for (int i = (a); i <= (b); ++i)",
             "#define endl '\\n'",
             "#define MAX_SIZE 100005",
             "#define MOD 1000000007",
-            "#define PI 3.1415926535897932384626433832795",
-            "void yes() { cout<<\"YES\\n\"; }",
-            "void no() { cout<<\"NO\\n\"; }",
             "// types",
             "typedef long long ll;",
             "typedef unsigned long long ull;",
@@ -80,5 +77,40 @@
             "#endif // $1"
         ],
         "description": "header file definitions"
+    },
+    "my pair with +=*/": {
+        "prefix": "pair_num",
+        "body": [
+            "struct pair_num//一个二元组类型",
+            "{",
+            " int x,y;",
+            " pair_num operator +(pair_num a)const //不加const会CE",
+            " {",
+            "  pair_num res;",
+            "  res.x=x+a.x;//x事实上是this.x",
+            "  res.y=y+a.y;",
+            "  return res;",
+            " }",
+            " pair_num operator -(pair_num a)const",
+            " {",
+            "  pair_num res;",
+            "  res.x=x-a.x;",
+            "  res.y=y-a.y;",
+            "  return res;",
+            " }",
+            " bool operator <(pair_num a)const //sort,set等数据结构需要使用小于号",
+            " {",
+            "  return x<a.x||(x==a.x&&y<a.y);",
+            " }",
+            "}a,b,res;",
+            "pair_num operator *(pair_num a,pair_num b)//在结构体外部定义时，不要加const",
+            "{",
+            " pair_num res;",
+            " res.x=a.x*b.x;",
+            " res.y=a.y*b.y;",
+            " return res;",
+            "}"
+        ],
+        "description": "my pair with +=*/"
     }
 }
