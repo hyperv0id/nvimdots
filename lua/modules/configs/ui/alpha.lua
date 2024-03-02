@@ -1,6 +1,7 @@
 return function()
 	local dashboard = require("alpha.themes.dashboard")
 	require("modules.utils").gen_alpha_hl()
+	require("alpha.term")
 
 	local raw_logo = {
 		[[⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿]],
@@ -48,8 +49,8 @@ return function()
 		[[⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣤⣄⣉⡉⠛⠋⠉⠉⠀⣀⣀⣤⣷⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿]],
 		[[⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿]],
 	}
-	dashboard.section.header.val = ling_logo
-	dashboard.section.header.opts.hl = "AlphaHeader"
+	dashboard.section.header.val = ""
+	-- dashboard.section.header.opts.hl = "AlphaHeader"
 
 	local function button(sc, txt, leader_txt, keybind, keybind_opts)
 		local sc_after = sc:gsub("%s", ""):gsub(leader_txt, "<leader>")
@@ -174,6 +175,21 @@ return function()
 		{ type = "padding", val = header_padding },
 		dashboard.section.header,
 		{ type = "padding", val = head_butt_padding },
+		dashboard.section.buttons,
+		{ type = "padding", val = foot_butt_padding },
+		dashboard.section.footer,
+	}
+
+	local ascii_path = os.getenv("HOME") .. "/.config/nvim/assets/"
+	local ascii_filename = "ascii_0.1.txt"
+	dashboard.section.terminal.command = "cat " .. ascii_path .. ascii_filename
+	-- dashboard.section.terminal.command = "kitty +kitten icat /home/jcheng/Downloads/107523985_p0.png"
+	-- dashboard.section.terminal.height = 60
+	dashboard.section.terminal.width = 50
+	dashboard.section.terminal.height = 26
+	dashboard.opts.layout = {
+		dashboard.section.terminal,
+		-- { type = "padding", val = 1 },
 		dashboard.section.buttons,
 		{ type = "padding", val = foot_butt_padding },
 		dashboard.section.footer,
