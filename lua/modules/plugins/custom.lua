@@ -14,6 +14,7 @@ jcheng["xeluxee/competitest.nvim"] = {
 		{ "<leader>cpa", "<cmd>CompetiTest add_testcase<cr>", desc = "Add TestCases" },
 		{ "<leader>cpe", "<cmd>CompetiTest edit_testcase<cr>", desc = "Edit TestCases" },
 		{ "<leader>cpr", "<cmd>CompetiTest run<cr>", desc = "Run All TestCases" },
+		{ "<leader>cpd", "<cmd>CompetiTest delete_testcase<cr><cr>", desc = "Delete TestCase" },
 	},
 	config = require("custom.competitest"),
 }
